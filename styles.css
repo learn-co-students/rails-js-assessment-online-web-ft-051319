@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    background-color: blue;
+    color: white;
+     /* #4caf50; */
+    margin: 0 auto;
+    height: 50px;
+  }
+
+  header h2 {
+    padding: 10px;
+    margin: 0;
+  }
+
+  main {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-gap: 20px;
+    padding-top: 10px;
+    padding-bottom: 30px;
+  }
+  select {
+    position: absolute;
+    left: 0px;
+
+  }
+  /*
+  div.card {
+    background-color: #eeeeee;
+    height: 250px;
+    width: 300px;
+    box-shadow: 10px 10px grey;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  */
+  div.display-posts {
+    position: absolute;
+    top: 350px;
+    left: 0px;
+    font-size: 1.05em;
+  }
+
+  p {
+    left: 0px;
+    font-size: 0.85em;
+    color: black;
+    font-family: Helvetica;
+  }
+
+  p.user-label {
+
+    { position: absolute;
+      top: 0px;
+
+      left: 0px;
+      font-size: 0.85em;
+      color: black;
+      font-family: Helvetica;
+    }
+
+  li {
+    font-size: 1.05em;
+    list-style: none;
+    padding-right: 20px;
+  }
+
+  button {
+    /*
+    position: absolute
+    font-size: 1.05em;
+    color: white;
+    background-color: blue;
+    */
+    position: absolute;
+    top: 300px;
+    color: white;
+    width: 10px;
+    /*
+    background-color:#44c767
+    */
+    background-color: blue;
+  	-moz-border-radius:28px;
+  	-webkit-border-radius:28px;
+  	border-radius:28px;
+  	border:1px solid #18ab29;
+  	display:inline-block;
+  	cursor:pointer;
+  	color:#ffffff;
+  	font-family:Arial;
+  	font-size:17px;
+  	padding:16px 31px;
+  	text-decoration:none;
+  	text-shadow:0px 1px 0px #2f6627;
+
+
+  }
+
+
+
+  button.submit-btn {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 300px;
+  border: 3px solid #73AD21;
+  }
+
+  button.release {
+    float: right;
+    background-color: #E1332D;
+  }
+
+
+
+  textarea {
+    width: 600px;
+    height: 120px;
+  }
+
+  input.postTitle {
+
+    height: 20px;
+  }
+  /*
+  Text
+  green */
+
+
+  submitBtn {
+
+  Font Size:
+  17px
+   bold  italic
+  Size
+  Vertical:
+  16px
+  Horizontal:
+  31px
+
+  Border Radius:
+  28px
+  Border Size:
+  1px
+   Box Shadow
+   Text Shadow
+  Vertical Position:
+  1px
+  Horizontal Position:
+  0px
+  Blur Radius:
+  0px
+}
+
+
+
+
+
+
+  @media only screen and (min-width: 500px) {
+    main {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  @media only screen and (min-width: 850px) {
+    main {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+  }
