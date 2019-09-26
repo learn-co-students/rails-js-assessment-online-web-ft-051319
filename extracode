@@ -1,0 +1,95 @@
+<textarea name="blogbox">
+
+</textarea>
+<button name="blogSubmit">Submit Blog Entry</button>
+
+
+<select>
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Benz</option>
+</select>
+
+
+<a href="#" class="myButton">green</a>
+
+.myButton {
+  background-color:#44c767;
+  -moz-border-radius:28px;
+  -webkit-border-radius:28px;
+  border-radius:28px;
+  border:1px solid #18ab29;
+  display:inline-block;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:17px;
+  padding:16px 31px;
+  text-decoration:none;
+  text-shadow:0px 1px 0px #2f6627;
+}
+.myButton:hover {
+  background-color:#5cbf2a;
+}
+.myButton:active {
+  position:relative;
+  top:1px;
+}
+
+
+
+  submitBtn {
+
+  Font Size:
+  17px
+   bold  italic
+  Size
+  Vertical:
+  16px
+  Horizontal:
+  31px
+
+  Border Radius:
+  28px
+  Border Size:
+  1px
+   Box Shadow
+   Text Shadow
+  Vertical Position:
+  1px
+  Horizontal Position:
+  0px
+  Blur Radius:
+  0px
+}
+
+
+/*
+color:#ffffff;
+*/
+
+  	cursor: pointer;
+----
+
+let displaySection=document.querySelector('div.display-posts')
+
+let postP=document.createElement('p')
+
+postP.innerText=`Author Username: ${post.author.username}\nTitle: ${post.title}\nBody: ${post.body}\n\n`
+
+displaySection.append(postP)
+
+---
+
+
+    postArray.forEach(post=> {
+      let displaySection=document.querySelector('div.display-posts')
+
+      let postP=document.createElement('p')
+
+      postP.innerText=`Author Username: ${post.author.username}\nTitle: ${post.title}\nBody: ${post.body}\n\n`
+
+      displaySection.append(postP)
+    })
+
+  }
