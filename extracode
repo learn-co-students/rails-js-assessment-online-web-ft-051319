@@ -35,3 +35,61 @@
   position:relative;
   top:1px;
 }
+
+
+
+  submitBtn {
+
+  Font Size:
+  17px
+   bold  italic
+  Size
+  Vertical:
+  16px
+  Horizontal:
+  31px
+
+  Border Radius:
+  28px
+  Border Size:
+  1px
+   Box Shadow
+   Text Shadow
+  Vertical Position:
+  1px
+  Horizontal Position:
+  0px
+  Blur Radius:
+  0px
+}
+
+
+/*
+color:#ffffff;
+*/
+
+  	cursor: pointer;
+----
+
+let displaySection=document.querySelector('div.display-posts')
+
+let postP=document.createElement('p')
+
+postP.innerText=`Author Username: ${post.author.username}\nTitle: ${post.title}\nBody: ${post.body}\n\n`
+
+displaySection.append(postP)
+
+---
+
+
+    postArray.forEach(post=> {
+      let displaySection=document.querySelector('div.display-posts')
+
+      let postP=document.createElement('p')
+
+      postP.innerText=`Author Username: ${post.author.username}\nTitle: ${post.title}\nBody: ${post.body}\n\n`
+
+      displaySection.append(postP)
+    })
+
+  }

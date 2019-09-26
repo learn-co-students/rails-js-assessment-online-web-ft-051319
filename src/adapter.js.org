@@ -1,0 +1,110 @@
+class Adapter {
+  constructor(url) {
+    this.baseUrl = url
+    this.posts = []
+    let mainSection = document.querySelector('main')
+  //  let userLabel = document.createElement('p')
+    //this.authorForm=document.querySelector('author-form')
+
+    let userLabel= document.querySelector('#user-label')
+    userLabel.innerText="User:"
+    let inputSection = document.querySelector('#post-submit');
+
+    //buildAuthorList()
+    this.titleLabel=document.createElement('p');
+
+    this.titleLabel.innerText="Title/Subject:"
+    this.titleBox=document.createElement('input')
+    this.titleBox.setAttribute('class', 'postTitle')
+    //let authorIdBox = document.createElement('input')
+    //authorIdBox.setAttribute('class', 'authorInput')
+    this.bodyLabel=document.createElement('p')
+    this.bodyLabel.innerText="Body:"
+    this.textBox=document.createElement('textarea')
+    let myBr = document.createElement('br')
+
+    let submitBtn = document.createElement('button')
+    let divSection = document.createElement('div')
+    divSection.setAttribute('class', 'display-posts')
+    submitBtn.setAttribute('class', 'submit-btn')
+    submitBtn.innerText= 'Submit'
+
+    inputSection.append(this.titleLabel, myBr, this.titleBox, myBr,this.bodyLabel,myBr,this.textBox, myBr)
+    mainSection.append(userLabel, this.inputSection, submitBtn, divSection)
+  //  renderPosts()
+  }
+  getAuthors()  {
+      let fetchObject={
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json'
+        }
+      }
+      return fetch(this.baseUrl+"/authors", fetchObject)
+        .then(resp => resp.json())
+        .then(resp => renderAuthors())
+    }
+
+
+
+  getPosts() {
+    console.log(this)
+    return fetch(this.baseUrl+"/posts")
+    .then (res => res.json())
+    .then (postArray=> postArray.forEach(post=> {
+        let newPost = new Post(post)
+        this.posts.push(newPost)
+      }))
+    .then(this.renderPosts())
+
+  }
+
+  renderAuthors = () => {
+    var mainSection = document.querySelector('main')
+    let selectElem = document.createElement('select')
+    console.log(resp)
+    resp.forEach(author => {
+        optionRow=document.createElement("option")
+        optionRow.setAttribute('value', author.id)
+        optionRow.innerText=author.username
+
+        selectElem.appendChild(optionRow)
+    })
+    // debugger;
+    mainSection.append(selectElem)
+
+  }
+
+renderPosts =() => {
+    /*
+    let ul=document.createElement('ul')
+    */
+
+    this.postCollection.innerHTML = ``
+    this.posts.forEach(post => {
+      this.postCollection.appendChild(post.render())
+    })
+  }
+}
+
+function renderPostList() {
+  let fetchObject={
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+      Accept: 'application/json'
+    }
+  }
+  fetch(POSTURL, fetchObject)
+    .then(resp => resp.json())
+    .then(resp => renderPosts(resp))
+}
+
+
+
+
+
+let adapter = new Adapter("http://localhost:3000")
+
+adapter.getPosts();
