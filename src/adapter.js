@@ -26,6 +26,7 @@ class Adapter {
     this.textBox=document.createElement('textarea')
     let myBr = document.createElement('br')
 
+
     this.submitBtn = document.createElement('button')
   //  this.inputSection.appendChild(submitBtn)
     // let divSection = document.createElement('div')
@@ -38,7 +39,6 @@ class Adapter {
 
     this.inputSection.append(this.titleLabel, myBr, this.titleBox, myBr,this.bodyLabel,myBr,this.textBox, myBr, this.submitBtn)
     this.submitBtn.addEventListener('click', this.submitBtnhandler)
-
 
 
   }
@@ -56,6 +56,8 @@ class Adapter {
     }
     // post the post Object
     this.postPost(postObj)
+    this.titleBox.value=""
+    this.textBox.value=""
   }
 
   // fetch the author list from the backend server

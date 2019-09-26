@@ -81,13 +81,20 @@ body {
 
 
     }
+
   button.submit-btn {
 
     left: 0px;
-    text-align: left;
+    text-align: center;
     border: none;
     }
+    button.fav-btn {
+      height:20px;
+      padding: 2px;
+      text-align: center;
+      font-size: 13px;
 
+    }
 
   p.user-label {
 
